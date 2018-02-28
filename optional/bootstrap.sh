@@ -23,6 +23,9 @@ apt-get install screen -y
 # Install python
 apt-get install python -y
 
+# Install make if not already there
+apt-get install make -y
+
 # Install snap and juju (might not be used for exam or already 
 # installed, but there are some objectives in the curriculum that only 
 # have ubuntu-related solutions in the official docs e.g. backup/restore)
