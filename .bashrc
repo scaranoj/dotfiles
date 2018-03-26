@@ -131,5 +131,8 @@ source <(kubectl completion bash)
 export EDITOR=vim
 export VISUAL=vim
 
+# Default systemd Editor
+export SYSTEMD_EDITOR=vim
+
 # Default email inbox
 export MAIL=
