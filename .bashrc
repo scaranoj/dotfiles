@@ -124,6 +124,9 @@ if ! shopt -oq posix; then
 fi
 export PATH="$PATH:/sbin"
 
+# export GOPATH
+
+
 # kubectl autopopulate
 source <(kubectl completion bash)
 
