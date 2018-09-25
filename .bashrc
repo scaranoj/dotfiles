@@ -122,7 +122,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="$PATH:/sbin"
+export PATH="~/.local/bin:$PATH:/sbin"
 
 # export GOPATH
 

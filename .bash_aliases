@@ -3,6 +3,9 @@
 # kubectl alias
 alias k=kubectl
 
+# aws-vault alias (if using)
+alias aws="aws-vault exec default -- aws"
+
 # List all files colorized in long, reverse sort, via mod time
 alias l="ls -lrt ${colorflag}"
 
