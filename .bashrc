@@ -8,6 +8,13 @@ case $- in
       *) return;;
 esac
 
+# automatically start ssh-agent and load the ssh-key(s) on login
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
+
+
 # This is a for loop from Mathias that I added that will load the shell 
 # dotfiles, and then some (you can remove this and just source the 
 # dotfiles in your .bashrc). It's not picking up the bash_prompt for 
