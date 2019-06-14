@@ -14,6 +14,8 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+# set gopath
+export GOPATH=$HOME/go
 
 # This is a for loop from Mathias that I added that will load the shell 
 # dotfiles, and then some (you can remove this and just source the 
