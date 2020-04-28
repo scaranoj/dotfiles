@@ -8,14 +8,22 @@ case $- in
       *) return;;
 esac
 
+
 # automatically start ssh-agent and load the ssh-key(s) on login
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
 
-# set gopath
+# set go envs
 export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+
+# set working directory for clone of k/k fork
+export working_dir=$GOPATH/src/k8s.io
+
+# set user to github profile name
+export user=scaranoj
 
 # This is a for loop from Mathias that I added that will load the shell 
 # dotfiles, and then some (you can remove this and just source the 
@@ -36,8 +44,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=2000
+HISTFILESIZE=4000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -131,10 +139,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="~/.local/bin:$PATH:/sbin"
+export PATH="/home/jason/.local/bin:$PATH:/sbin"
 
 # export GOPATH
+export PATH=$PATH:/usr/local/go/bin
 
+# export kind
+export PATH=$PATH:~/go/bin
 
 # kubectl autopopulate
 source <(kubectl completion bash)
@@ -148,3 +159,17 @@ export SYSTEMD_EDITOR=vim
 
 # Default email inbox
 export MAIL=
+export PATH=$HOME/bin:$PATH
+
+
+# add adb to path, but using adb from package mgr instead (this can be deleted)
+if [ -d "/opt/adb-fastboot/platform-tools" ] ; then
+ export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
+fi
+
+# Bash History Display Date And Time
+export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTTIMEFORMAT="%F %T "
+
+# direnv (environment variable manager) hook
+eval "$(direnv hook bash)"
