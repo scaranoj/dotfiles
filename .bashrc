@@ -150,6 +150,9 @@ export PATH=$PATH:~/go/bin
 # kubectl autopopulate
 source <(kubectl completion bash)
 
+# shorthand alias for kubectl to also work with completion
+complete -F __start_kubectl k
+
 # Default CLI Editor
 export EDITOR=vim
 export VISUAL=vim
