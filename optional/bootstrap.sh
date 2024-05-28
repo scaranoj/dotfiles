@@ -18,25 +18,16 @@ apt-get install git -y
 apt-get install bash-completion -y
 
 #Install screen
-apt-get install screen -y
+#apt-get install screen -y
+
+#Install tmux
+apt-get install tmux -y
 
 # Install python
 apt-get install python -y
 
 # Install make if not already there
 apt-get install make -y
-
-# Install snap and juju (might not be used for exam or already 
-# installed, but there are some objectives in the curriculum that only 
-# have ubuntu-related solutions in the official docs e.g. backup/restore)
-sudo snap install juju --classic
-
-# Download # Unzip GC SDK
-#wget -q --show-progress --https-only --timestamping \
-#https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-184.0.0-linux-x86_64.tar.gz
-
-# Unzip GC SDK
-#tar xvzf google-cloud-sdk-184.0.0-linux-x86_64.tar.gz
 
 # Download cfssl and cfssljson
 wget -q --show-progress --https-only --timestamping \
@@ -60,4 +51,4 @@ cfssl version
 #sudo mv kubectl /usr/local/bin/
 
 # Verify kubectl is installed:
-kubectl version --client
+# kubectl version --client
